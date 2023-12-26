@@ -1,0 +1,39 @@
+.loginPage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  height: 200px;
+  border: 1px solid silver;
+  border-radius: 8px;
+  padding: 10px;
+
+  &__title {
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+  }
+  &__container {
+    padding: 10px;
+
+    &_button {
+      text-align: center;
+
+      button {
+        width: 150px;
+        margin-top: 15px;
+        background-color: black;
+
+        &:hover {
+          background-color: black;
+          opacity: 0.8;
+        }
+      }
+    }
+
+    input {
+      width: 200px;
+      margin-top: 15px;
+    }
+  }
+}
