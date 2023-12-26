@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   BrowserRouter,
   Route,
@@ -11,6 +12,11 @@ import SignUp from './components/Authorization/SignUp/SignUp';
 import './App.css'
 
 function App() {
+
+  React.useEffect(() => {
+    fetch('https://my-json-server.typicode.com/ChmyrRoma/kanban-board/posts')
+      .then((data) => console.log(data))
+  }, [])
 
   return (
     <BrowserRouter>
