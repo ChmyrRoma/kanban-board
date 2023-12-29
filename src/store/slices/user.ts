@@ -4,7 +4,7 @@ import { usersInfo, setIsAuthorized } from '../reducers/user';
 export const login = createAsyncThunk(
   'login',
   async(data, thunkAPI) => {
-    const response = await console.log(data)
+    const response = await console.log(thunkAPI.dispatch(usersInfo()))
     if (response) {
       return response.data
     }

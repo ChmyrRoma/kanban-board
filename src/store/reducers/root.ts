@@ -1,9 +1,9 @@
 import { AnyAction, combineReducers } from '@reduxjs/toolkit';
 
-import { usersSlice } from './user';
+import { usersSlice, IUsersSliceState } from './user';
 
 export interface StoreState {
-  user: any
+  user: IUsersSliceState,
 }
 
 export const combinedReducers = combineReducers({
