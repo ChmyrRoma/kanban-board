@@ -1,14 +1,20 @@
-import React from 'react';
 import { Grid } from '@mui/material';
-import { Link } from 'react-router-dom';
+
+import PublicLayout from "./component/PublicLayout/PublicLayout";
+import PrivateLayout from "./component/PrivateLayout/PrivateLayout";
+import {Link} from "react-router-dom";
 
 const MainPage = () => {
   return (
     <>
-     <Grid sx={{ textAlign: 'center', cursor: 'pointer' }}>
-       <Link to="/sign-in" style={{ margin: '10px' }}>Sign In</Link>
-       <Link to="/sign-up">Sign Up</Link>
-     </Grid>
+      <Grid sx={{ textAlign: 'center', cursor: 'pointer' }}>
+        <PublicLayout />
+        <Link to="/sign-in" style={{ margin: '10px' }}>Sign In</Link>
+        <Link to="/sign-Up">Sign Up</Link>
+      </Grid>
+      <Grid>
+        <PrivateLayout />
+      </Grid>
     </>
   )
 }
