@@ -1,12 +1,13 @@
-.loginPage {
+.signUpPage {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 300px;
-  height: 200px;
+  height: 300px;
   border: 1px solid silver;
   border-radius: 8px;
   padding: 10px;
+
 
   &__title {
     text-align: center;
@@ -17,11 +18,11 @@
     padding: 10px;
 
     &_button {
+      margin-top: 10px;
       text-align: center;
 
       button {
         width: 150px;
-        margin-top: 15px;
         background-color: black;
 
         &:hover {
@@ -30,7 +31,6 @@
         }
       }
     }
-
     input {
       width: 200px;
       margin-top: 15px;
