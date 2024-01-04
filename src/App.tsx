@@ -5,16 +5,17 @@ import {
   Routes,
 } from 'react-router-dom';
 
-import MainPage from './components/MainPage';
+import Page from './components/Page';
 import SignIn from './components/component/PublicLayout/Authorization/SignIn/SignIn';
 import SignUp from './components/component/PublicLayout/Authorization/SignUp/SignUp';
 import PublicLayout from './components/component/PublicLayout/PublicLayout';
 import PublicProvider from './components/providers/PublicProvider';
 import { PageNotFound } from './components/common/PageNotFound/PageNotFound';
+import Settings from './components/component/PrivateLayout/Settings/Settings';
+import MainPage from './components/component/PrivateLayout/MainPage/MainPage';
 
 import PrivateLayout from './components/component/PrivateLayout/PrivateLayout';
 import PrivateProvider from './components/providers/PrivateProvider';
-import Shop from './components/component/PrivateLayout/Shop/Shop';
 
 import './App.css'
 
@@ -23,7 +24,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MainPage />} />
+        <Route path="/" element={<Page />} />
         <Route element={<PublicProvider />}>
           <Route element={<PublicLayout />}>
             <Route path="/sign-in" element={<SignIn />} />
@@ -32,7 +33,8 @@ function App() {
         </Route>
         <Route element={<PrivateProvider />}>
           <Route element={<PrivateLayout />}>
-            <Route path="/shop" element={<Shop />} />
+            <Route path="/mainPage" element={<MainPage />} />
+            <Route path="/settings" element={<Settings />} />
           </Route>
         </Route>
         <Route path="*" element={<PageNotFound />} />

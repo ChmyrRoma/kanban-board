@@ -1,0 +1,111 @@
+.sideBar {
+  position: absolute;
+  left: 0;
+  width: 350px;
+  height: 100%;
+  background-color: #333333;
+  box-shadow: 1px 1px 10px 1px;
+
+  &__pageBlock {
+    position: relative;
+    top: 5%;
+    color: white;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 300px;
+  }
+
+  &__component {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 0 30px;
+    height: 39px;
+    border-radius: 7px;
+
+    a {
+      text-decoration: none;
+      color: white;
+      text-align: start;
+      width: 100px;
+    }
+
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+
+    &_active {
+      background-color: #9b51e0;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__infoBlock {
+    position: relative;
+    top: 65%;
+    height: 100px;
+
+    &_button {
+      text-align: center;
+
+      button {
+        background-color: transparent;
+        color: white;
+        font-family: Roboto;
+        font-size: 20px;
+        border: none;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+        &:hover {
+          cursor: pointer;
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+  }
+
+  &__avatar {
+    background-color: #C4C4C4;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  &__userInfo {
+    color: white;
+    margin-left: 10px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    &_name {
+      font-size: 20px;
+    }
+
+    &_email {
+      font-size: 14px;
+    }
+  }
+}
+
+.inline {
+  background-color: silver;
+  opacity: 0.6;
+  height: 1px;
+  margin: 20px 0 20px 0;
+}

@@ -7,15 +7,22 @@ export interface IUsersSliceState {
 }
 
 interface IUserInfoState {
-  name: string,
-  age: number
+  active: boolean
+  createdAt: string
+  deletedAd: null
+  email: string
+  ethAddress: null
+  id: number
+  language: string
+  photo: null
+  photoId: null
+  principal: string
+  tenant: string
+  updatedAt: string
 }
 
 const initialState = {
-  userInfo: {
-    name: 'Roma',
-    age: 32,
-  },
+  userInfo: [],
   isAuthorized: false,
   isLoading: true
 } as IUsersSliceState
@@ -24,16 +31,16 @@ export const usersSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    usersInfo: (state) => {
-      console.log('state.userInfo', state.userInfo)
+    userInfo: (state, action) => {
+      state.userInfo.push(action.payload)
     },
     setIsAuthorized: (state) => {
       state.isAuthorized = true
     },
     setIsLogOut: (state) => {
       state.isAuthorized = false
-    }
+    },
   }
 });
 
-export const { usersInfo, setIsAuthorized, setIsLogOut } = usersSlice.actions
+export const { userInfo, setIsAuthorized, setIsLogOut } = usersSlice.actions

@@ -1,12 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { setIsAuthorized, setIsLogOut } from '../reducers/user';
+import { setIsAuthorized, setIsLogOut, userInfo } from '../reducers/user';
 import { userAPI } from '../rest/user';
 
 export const login = createAsyncThunk(
   'login',
   async(data, thunkAPI) => {
     const response = await userAPI.login(data)
-    console.log('response', response)
 
     if (response.data.accessToken) {
       localStorage.setItem('token', response.data.accessToken)
@@ -24,6 +23,10 @@ export const getUser = createAsyncThunk(
   async(_, thunkAPI) => {
     const response = await userAPI.getUser()
     await thunkAPI.dispatch(setIsAuthorized())
+
+    if (response.data) {
+      return thunkAPI.dispatch(userInfo(response.data))
+    }
   }
 )
 

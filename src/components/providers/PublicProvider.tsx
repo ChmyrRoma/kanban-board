@@ -9,7 +9,7 @@ const PublicProvider = () => {
 
  useEffect(() => {
    if (isAuthorized) {
-     navigate('/')
+     navigate('/mainPage')
    }
  }, [isAuthorized])
 

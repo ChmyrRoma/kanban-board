@@ -1,10 +1,15 @@
 import { Outlet } from 'react-router-dom';
 
+import SideBar from './PrivateSideBar/SideBar';
+
 
 const PrivateLayout = () => {
   return (
     <>
-      <Outlet />
+      <SideBar />
+      <div>
+        <Outlet />
+      </div>
     </>
   )
 }
