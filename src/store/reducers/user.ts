@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export interface IUsersSliceState {
   useInfo: IUserInfoState,
   isAuthorized: boolean
+  isLoading: boolean
 }
 
 interface IUserInfoState {
@@ -16,6 +17,7 @@ const initialState = {
     age: 32,
   },
   isAuthorized: false,
+  isLoading: true
 } as IUsersSliceState
 
 export const usersSlice = createSlice({
@@ -26,9 +28,12 @@ export const usersSlice = createSlice({
       console.log('state.userInfo', state.userInfo)
     },
     setIsAuthorized: (state) => {
-      state.IsAuthorized = false
+      state.isAuthorized = true
+    },
+    setIsLogOut: (state) => {
+      state.isAuthorized = false
     }
   }
 });
 
-export const { usersInfo, setIsAuthorized } = usersSlice.actions
+export const { usersInfo, setIsAuthorized, setIsLogOut } = usersSlice.actions
