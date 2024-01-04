@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Checkbox, FormControlLabel, Grid, Input} from '@mui/material';
+import { Button, Checkbox, FormControlLabel, Grid, Input } from '@mui/material';
 
 import styles from './SignUp.module.scss';
 

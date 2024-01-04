@@ -20,15 +20,6 @@ import './App.css'
 
 function App() {
 
-  React.useEffect(() => {
-    fetch('https://my-json-server.typicode.com/ChmyrRoma/kanban-board/main/posts', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then((data) => console.log(data))
-  }, [])
-
   return (
     <BrowserRouter>
       <Routes>
