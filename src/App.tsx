@@ -5,7 +5,6 @@ import {
   Routes,
 } from 'react-router-dom';
 
-import Page from './components/Page';
 import SignIn from './components/component/PublicLayout/Authorization/SignIn/SignIn';
 import SignUp from './components/component/PublicLayout/Authorization/SignUp/SignUp';
 import PublicLayout from './components/component/PublicLayout/PublicLayout';
@@ -17,14 +16,12 @@ import MainPage from './components/component/PrivateLayout/MainPage/MainPage';
 import PrivateLayout from './components/component/PrivateLayout/PrivateLayout';
 import PrivateProvider from './components/providers/PrivateProvider';
 
-import './App.css'
 
 function App() {
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Page />} />
         <Route element={<PublicProvider />}>
           <Route element={<PublicLayout />}>
             <Route path="/sign-in" element={<SignIn />} />
