@@ -1,28 +1,27 @@
 .sideBar {
-  position: absolute;
-  left: 0;
-  width: 350px;
-  height: 100%;
   background-color: #333333;
   box-shadow: 1px 1px 10px 1px;
+  width: 250px;
+  height: 100vh;
 
   &__pageBlock {
-    position: relative;
-    top: 5%;
+    margin-top: 40px;
     color: white;
     font-family: Roboto;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    width: 300px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   &__component {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 10px 0 0 30px;
+    margin: 10px 0;
     height: 39px;
     border-radius: 7px;
 
@@ -30,7 +29,7 @@
       text-decoration: none;
       color: white;
       text-align: start;
-      width: 100px;
+      width: 90px;
     }
 
     &:hover {
@@ -40,6 +39,7 @@
 
     &_active {
       background-color: #9b51e0;
+
       &:hover {
         opacity: 1;
       }
@@ -48,8 +48,7 @@
 
   &__infoBlock {
     position: relative;
-    top: 65%;
-    height: 100px;
+    top: 60%;
 
     &_button {
       text-align: center;

@@ -8,7 +8,7 @@ import { logOut } from '../../../../store/slices/user';
 
 import styles from './SideBar.module.scss';
 
-const array = [
+const routes = [
   { title: 'Main Page', url: '/mainPage' },
   { title: 'Settings', url: '/settings' }
 ]
@@ -26,7 +26,7 @@ const SideBar = () => {
   return (
     <Grid className={styles.sideBar}>
       <Grid className={styles.sideBar__pageBlock}>
-        {array.map(el => (
+        {routes.map(el => (
           <Grid className={classNames({
             [styles.sideBar__component]: true,
             [styles.sideBar__component_active]: el.url === location.pathname

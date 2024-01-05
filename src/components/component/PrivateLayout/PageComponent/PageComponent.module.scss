@@ -1,0 +1,40 @@
+.page {
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+
+    &_title {
+      color: var(--Gray-1, #333);
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      font-family: Roboto;
+      font-size: 26px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    &_button {
+      color: var(--Gray-6, #F2F2F2);
+      width: 100px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--Purple-2, #BB6BD9);
+      border: none;
+      font-family: Roboto;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.9;
+      }
+      &:active {
+        zoom: 0.99;
+      }
+    }
+  }
+}
+

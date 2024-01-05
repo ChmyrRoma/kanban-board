@@ -5,16 +5,17 @@ import {
   Routes,
 } from 'react-router-dom';
 
+
+import PublicProvider from './components/providers/PublicProvider';
+import PrivateProvider from './components/providers/PrivateProvider';
+import PublicLayout from './components/component/PublicLayout/PublicLayout';
+import PrivateLayout from './components/component/PrivateLayout/PrivateLayout';
+
 import SignIn from './components/component/PublicLayout/Authorization/SignIn/SignIn';
 import SignUp from './components/component/PublicLayout/Authorization/SignUp/SignUp';
-import PublicLayout from './components/component/PublicLayout/PublicLayout';
-import PublicProvider from './components/providers/PublicProvider';
+import MainPageContainer from './components/component/PrivateLayout/MainPage/MainPageContainer';
+import SettingsContainer from './components/component/PrivateLayout/Settings/SettingsContainer';
 import { PageNotFound } from './components/common/PageNotFound/PageNotFound';
-import Settings from './components/component/PrivateLayout/Settings/Settings';
-import MainPage from './components/component/PrivateLayout/MainPage/MainPage';
-
-import PrivateLayout from './components/component/PrivateLayout/PrivateLayout';
-import PrivateProvider from './components/providers/PrivateProvider';
 
 
 function App() {
@@ -30,8 +31,8 @@ function App() {
         </Route>
         <Route element={<PrivateProvider />}>
           <Route element={<PrivateLayout />}>
-            <Route path="/mainPage" element={<MainPage />} />
-            <Route path="/settings" element={<Settings />} />
+            <Route path="/mainPage" element={<MainPageContainer />} />
+            <Route path="/settings" element={<SettingsContainer />} />
           </Route>
         </Route>
         <Route path="*" element={<PageNotFound />} />
