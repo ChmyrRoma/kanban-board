@@ -4,17 +4,30 @@
   width: 250px;
   height: 100vh;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-bottom: 10px;    
+  }
+
   &__pageBlock {
-    margin-top: 40px;
     color: white;
     font-family: Roboto;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    width: 200px;
-    margin-left: auto;
-    margin-right: auto;
+    width: calc(100% - 30px);
+    padding: 0 15px;
+    // margin-left: auto;
+    // margin-right: auto;
   }
 
   &__component {
@@ -42,31 +55,6 @@
 
       &:hover {
         opacity: 1;
-      }
-    }
-  }
-
-  &__infoBlock {
-    position: relative;
-    top: 60%;
-
-    &_button {
-      text-align: center;
-
-      button {
-        background-color: transparent;
-        color: white;
-        font-family: Roboto;
-        font-size: 20px;
-        border: none;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-
-        &:hover {
-          cursor: pointer;
-          opacity: 0.9;
-        }
       }
     }
   }
@@ -100,11 +88,31 @@
       font-size: 14px;
     }
   }
+
+  &__footer {
+    border-top: 1px solid silver;
+    opacity: 0.6;
+    padding: 10px 15px;
+
+    &_buttonContainer {
+      text-align: center;
+
+      button {
+        background-color: transparent;
+        color: white;
+        font-family: Roboto;
+        font-size: 18px;
+        border: none;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+        &:hover {
+          cursor: pointer;
+          opacity: 0.9;
+        }
+      }
+    }
+  }
 }
 
-.inline {
-  background-color: silver;
-  opacity: 0.6;
-  height: 1px;
-  margin: 20px 0 20px 0;
-}
