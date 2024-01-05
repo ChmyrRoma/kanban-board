@@ -9,7 +9,7 @@ import { logOut } from '../../../../store/slices/user';
 import styles from './SideBar.module.scss';
 
 const routes = [
-  { title: 'Main Page', url: '/mainPage' },
+  { title: 'Main Page', url: '/events' },
   { title: 'Settings', url: '/settings' }
 ]
 

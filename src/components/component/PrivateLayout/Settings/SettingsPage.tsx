@@ -4,7 +4,7 @@ import PageComponent from '../PageComponent/PageComponent';
 import Settings from './Settings';
 
 
-const SettingsContainer = () => {
+const SettingsPage = () => {
   return (
     <PageComponent title="Settings">
       <Settings />
@@ -12,4 +12,4 @@ const SettingsContainer = () => {
   )
 }
 
-export default SettingsContainer;
+export default SettingsPage;
