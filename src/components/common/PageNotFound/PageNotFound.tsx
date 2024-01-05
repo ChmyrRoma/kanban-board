@@ -6,7 +6,7 @@ export const PageNotFound = () => {
     <Box sx={{ textAlign: 'center' }}>
       <p style={{ fontSize: 'xxx-large' }}>404</p>
       <div><h3>Page not Found</h3></div>
-      <Link to="/" sx={{ cursor: 'pointer' }}><h4>Go back home</h4></Link>
+      <Link to="/sign-in" sx={{ cursor: 'pointer' }}><h4>Go back home</h4></Link>
     </Box>
   )
 }
