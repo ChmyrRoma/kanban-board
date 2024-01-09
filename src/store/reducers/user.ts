@@ -17,14 +17,15 @@ interface IUserInfoState {
   photo: null
   photoId: null
   principal: string
+  role?: string
   tenant: string
   updatedAt: string
 }
 
 const initialState = {
-  userInfo: [],
+  userInfo: null,
   isAuthorized: false,
-  isLoading: true
+  isLoading: true,
 } as IUsersSliceState
 
 export const usersSlice = createSlice({
@@ -32,15 +33,15 @@ export const usersSlice = createSlice({
   initialState,
   reducers: {
     userInfo: (state, action) => {
-      state.userInfo.push(action.payload)
+      state.userInfo = action.payload
     },
-    setIsAuthorized: (state) => {
-      state.isAuthorized = true
+    setIsAuthorized: (state, action) => {
+      state.isAuthorized = action.payload
     },
-    setIsLogOut: (state) => {
-      state.isAuthorized = false
+    setIsLoading: (state) => {
+      state.isLoading = false
     },
   }
 });
 
-export const { userInfo, setIsAuthorized, setIsLogOut } = usersSlice.actions
+export const { userInfo, setIsAuthorized, setIsLoading } = usersSlice.actions

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import PageComponent from '../PageComponent/PageComponent';
-import Settings from './Settings';
+import PageComponent from '../../components/shared/PageComponent/PageComponent';
+import Settings from '../../components/component/business/Settings/Settings';
 
 
 const SettingsPage = () => {

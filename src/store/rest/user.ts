@@ -6,9 +6,11 @@ const getToken = () => {
   return localStorage.getItem('token')
 }
 
-const axiosConfig = {
-  headers: {
-    Authorization: `Bearer ${getToken()}`
+const axiosConfig = () => {
+  return {
+    headers: {
+      Authorization: `Bearer ${getToken()}`
+    }
   }
 }
 
@@ -21,7 +23,7 @@ const login = ({ email, password }) => {
 }
 
 const getUser = () => {
-  const requestAxios = axios.get(`${API_BASE_URL}/auth/me`, axiosConfig)
+  const requestAxios = axios.get(`${API_BASE_URL}/auth/me`, axiosConfig())
     .then((data) => data)
     .catch((error) => console.log(error))
 

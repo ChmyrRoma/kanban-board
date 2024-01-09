@@ -11,7 +11,7 @@ const SignIn = () => {
   const dispatch = useAppDispatch()
 
   const onSubmit = async () => {
-    const result = await dispatch(login({ email: userEmail, password: userPassword }))
+    await dispatch(login({ email: userEmail, password: userPassword }))
   }
 
   return (
