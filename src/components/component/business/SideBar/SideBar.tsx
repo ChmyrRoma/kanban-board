@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Grid } from '@mui/material';
-import { Link, useLocation } from 'react-router-dom';
-import * as classNames from 'classnames';
+import { NavLink } from 'react-router-dom';
 
 import { useAppDispatch, useAppSelector } from '../../../../store/hooks';
 import { logOut } from '../../../../store/slices/user';
@@ -9,15 +8,14 @@ import { logOut } from '../../../../store/slices/user';
 import styles from './SideBar.module.scss';
 
 const routes = [
-  { title: 'Events Page', url: '/events' },
-  { title: 'Settings', url: '/settings' }
+  { title: 'Events Page', path: '/events' },
+  { title: 'Settings', path: '/settings' }
 ]
 
 const SideBar = () => {
   const { userInfo } = useAppSelector(state => state.user)
 
   const dispatch = useAppDispatch();
-  const location = useLocation();
 
   const handleLogOut = () => {
     dispatch(logOut())
@@ -28,12 +26,13 @@ const SideBar = () => {
       <Box className={styles.sideBar__content}>
         <Box className={styles.sideBar__pageBlock}>
           {routes.map(el => (
-            <Box key={el.title} className={classNames({
-              [styles.sideBar__component]: true,
-              [styles.sideBar__component_active]: el.url === location.pathname // TODO: check react router dom -> Link and fix it
-            })}
-            >
-              <Link to={el.url}>{el.title}</Link>
+            <Box key={el.title} className={styles.sideBar__component}>
+              <NavLink
+                to={el.path}
+                className={({ isActive }) => isActive ? `${styles.sideBar__component_active}` : "" }
+              >
+                {el.title}
+              </NavLink>
             </Box>
           ))}
         </Box>
