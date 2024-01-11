@@ -14,7 +14,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding-top: 40px;
-    padding-bottom: 10px;    
+    padding-bottom: 10px;
   }
 
   &__pageBlock {
@@ -35,14 +35,16 @@
     align-items: center;
     justify-content: center;
     margin: 10px 0;
-    height: 39px;
-    border-radius: 7px;
+
 
     a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-decoration: none;
       color: white;
-      text-align: start;
-      width: 100px;
+      width: 180px;
+      height: 39px;
     }
 
     &:hover {
@@ -52,6 +54,7 @@
 
     &_active {
       background-color: #9b51e0;
+      border-radius: 7px;
 
       &:hover {
         opacity: 1;
