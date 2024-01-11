@@ -6,16 +6,17 @@ import {
 } from 'react-router-dom';
 
 
+import GlobalProvider from './components/providers/GlobalProvider';
 import PublicProvider from './components/providers/PublicProvider';
 import PrivateProvider from './components/providers/PrivateProvider';
-import PublicLayout from './components/component/PublicLayout/PublicLayout';
-import PrivateLayout from './components/component/PrivateLayout/PrivateLayout';
+import PublicLayout from './components/layouts/PublicLayout/PublicLayout';
+import PrivateLayout from './components/layouts/PrivateLayout/PrivateLayout';
 
-import SignIn from './components/component/PublicLayout/Authorization/SignIn/SignIn';
-import SignUp from './components/component/PublicLayout/Authorization/SignUp/SignUp';
-import MainPage from './components/component/PrivateLayout/MainPage/MainPage';
-import SettingsPage from './components/component/PrivateLayout/Settings/SettingsPage';
+import SignIn from './components/component/business/Authorization/SignIn/SignIn';
+import SignUp from './components/component/business/Authorization/SignUp/SignUp';
 import { PageNotFound } from './components/common/PageNotFound/PageNotFound';
+import EventsPage from './pages/EventsPage/EventsPage';
+import SettingsPage from './pages/Settings/SettingsPage';
 
 
 function App() {
@@ -23,16 +24,18 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<PublicProvider />}>
-          <Route element={<PublicLayout />}>
-            <Route path="/sign-in" element={<SignIn />} />
-            <Route path="/sign-up" element={<SignUp />} />
+        <Route element={<GlobalProvider />}>
+          <Route element={<PublicProvider />}>
+            <Route element={<PublicLayout />}>
+              <Route path="/sign-in" element={<SignIn />} />
+              <Route path="/sign-up" element={<SignUp />} />
+            </Route>
           </Route>
-        </Route>
-        <Route element={<PrivateProvider />}>
-          <Route element={<PrivateLayout />}>
-            <Route path="/events" element={<MainPage />} />
-            <Route path="/settings" element={<SettingsPage />} />
+          <Route element={<PrivateProvider />}>
+            <Route element={<PrivateLayout />}>
+              <Route path="/events" element={<EventsPage />} />
+              <Route path="/settings" element={<SettingsPage />} />
+            </Route>
           </Route>
         </Route>
         <Route path="*" element={<PageNotFound />} />

@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
-import SideBar from './PrivateSideBar/SideBar';
+import SideBar from '../../component/business/SideBar/SideBar';
 
 import styles from './PrivateLayout.module.scss';
 
