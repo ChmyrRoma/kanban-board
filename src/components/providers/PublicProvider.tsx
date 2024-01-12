@@ -12,7 +12,7 @@ const PublicProvider = () => {
 
   useEffect(() => {
     if (isAuthorized) {
-      navigate('/events')
+      navigate('/')
     } else {
       dispatch(checkAuth())
     }

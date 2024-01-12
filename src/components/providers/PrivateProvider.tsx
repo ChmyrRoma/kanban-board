@@ -7,10 +7,9 @@ import { checkAuth } from '../../store/slices/user';
 
 const PrivateProvider = () => {
   const { isAuthorized, isLoading } = useAppSelector(state => state.user);
+
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
-
-  console.log(isAuthorized)
 
   useEffect(() => {
     if (!isAuthorized) {

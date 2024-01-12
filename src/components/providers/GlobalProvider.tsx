@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import {checkAuth, logOut} from '../../store/slices/user';
+import { checkAuth, logOut } from '../../store/slices/user';
 
 
 const GlobalProvider = () => {
-  const { isAuthorized, isLoading } = useAppSelector(state => state.user);
+  const { isAuthorized } = useAppSelector(state => state.user);
   const token = localStorage.getItem('token')
   const dispatch = useAppDispatch()
 

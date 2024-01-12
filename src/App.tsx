@@ -33,7 +33,7 @@ function App() {
           </Route>
           <Route element={<PrivateProvider />}>
             <Route element={<PrivateLayout />}>
-              <Route path="/events" element={<EventsPage />} />
+              <Route path="/" element={<EventsPage />} />
               <Route path="/settings" element={<SettingsPage />} />
             </Route>
           </Route>

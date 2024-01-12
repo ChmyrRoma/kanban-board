@@ -8,10 +8,13 @@ import styles from './SignIn.module.scss';
 const SignIn = () => {
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
+  const [isDisabled, setIsDisabled] = useState(false);
   const dispatch = useAppDispatch()
 
-  const onSubmit = async () => {
-    await dispatch(login({ email: userEmail, password: userPassword }))
+
+  const onSubmit = () => {
+    dispatch(login({ email: userEmail, password: userPassword }))
+    setIsDisabled(true)
   }
 
   return (
@@ -27,7 +30,7 @@ const SignIn = () => {
           <Input type="password" placeholder="Enter you password" onChange={(e) => setUserPassword(e.target.value)}/>
         </Grid>
         <Grid className={styles['loginPage__container_button']}>
-          <Button variant="contained" onClick={onSubmit}>Login</Button>
+          <Button variant="contained" disabled={isDisabled} onClick={onSubmit}>Login</Button>
         </Grid>
       </Grid>
     </Grid>

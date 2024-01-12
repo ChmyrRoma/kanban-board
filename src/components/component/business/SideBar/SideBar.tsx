@@ -14,7 +14,7 @@ import { logOut } from '../../../../store/slices/user';
 import styles from './SideBar.module.scss';
 
 const routes = [
-  { title: 'Events Page', path: '/events', icon: <MenuIcon /> },
+  { title: 'Events Page', path: '/', icon: <MenuIcon /> },
   { title: 'Settings', path: '/settings', icon: <SettingsIcon /> }
 ]
 
