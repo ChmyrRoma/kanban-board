@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { Grid } from '@mui/material';
+import { useAppSelector } from '../../../../store/hooks';
 
 import styles from './EventsPage.module.scss';
 
@@ -9,14 +10,22 @@ interface IProps {
   img: null
 }
 
-const Events: React.FC<IProps> = ({ data }) => {
+const Events: React.FC<IProps> = () => {
   const [value, setValue] = useState('');
+  const [dataFilter, setDataFilter] = useState([]);
+  const { places } = useAppSelector(state => state.events)
 
   const handleSearch = (event) => {
     setValue(event.target.value)
   }
 
-  const dataFiltered = data.filter((el) => el.city.includes(value));
+  const dataFiltered = useCallback(() => {
+    setDataFilter(places.filter((el) => el.city.includes(value)))
+  }, [value]);
+
+  useEffect(() => {
+    dataFiltered()
+  }, [dataFiltered])
 
   return (
     <Grid className={styles.eventsPage}>
@@ -24,7 +33,7 @@ const Events: React.FC<IProps> = ({ data }) => {
         <input placeholder="Filters" onChange={handleSearch} />
       </Grid>
       <Grid className={styles.eventsPage__container}>
-        { dataFiltered.map(el => (
+        { dataFilter.map(el => (
           <Grid className={styles.eventsPage__content} key={el.city}>
             <Grid className={styles.eventsPage__content_image}>
               <img src={el.img} alt="image"/>
