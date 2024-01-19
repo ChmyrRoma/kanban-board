@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Grid } from '@mui/material';
 import { useAppSelector } from '../../../../store/hooks';
+import useDebounce from '../../../shared/hooks/useDebounce/useDebounce';
 
 import styles from './EventsPage.module.scss';
 
@@ -20,12 +21,11 @@ const Events: React.FC<IProps> = () => {
     setInputValue(event.target.value)
   }
 
+  const debouncedInput = useDebounce(inputValue, 500)
+
   useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setDataFilter(places.filter((el) => el.city.includes(inputValue)))
-    }, 500);
-    return () => clearTimeout(timeoutId);
-  }, [inputValue])
+    setDataFilter(places.filter((el) => el.city.includes(inputValue)))
+  }, [debouncedInput])
 
   return (
     <Grid className={styles.eventsPage}>
