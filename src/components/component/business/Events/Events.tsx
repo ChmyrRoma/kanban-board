@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Grid } from '@mui/material';
 import { useAppSelector } from '../../../../store/hooks';
 
@@ -11,26 +11,26 @@ interface IProps {
 }
 
 const Events: React.FC<IProps> = () => {
-  const [value, setValue] = useState('');
+  const [inputValue, setInputValue] = useState('');
   const [dataFilter, setDataFilter] = useState([]);
+
   const { places } = useAppSelector(state => state.events)
 
   const handleSearch = (event) => {
-    setValue(event.target.value)
+    setInputValue(event.target.value)
   }
 
-  const dataFiltered = useCallback(() => {
-    setDataFilter(places.filter((el) => el.city.includes(value)))
-  }, [value]);
-
   useEffect(() => {
-    dataFiltered()
-  }, [dataFiltered])
+    const timeoutId = setTimeout(() => {
+      setDataFilter(places.filter((el) => el.city.includes(inputValue)))
+    }, 500);
+    return () => clearTimeout(timeoutId);
+  }, [inputValue])
 
   return (
     <Grid className={styles.eventsPage}>
       <Grid className={styles.eventsPage__filter}>
-        <input placeholder="Filters" onChange={handleSearch} />
+        <input placeholder="Filters" value={inputValue} onChange={handleSearch} />
       </Grid>
       <Grid className={styles.eventsPage__container}>
         { dataFilter.map(el => (

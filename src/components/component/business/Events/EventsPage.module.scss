@@ -15,9 +15,10 @@
       font-style: normal;
       font-weight: 400;
 
-      &:active {
-        border: none;
+      &:focus {
+        outline: none;
       }
+
     }
   }
 
@@ -44,7 +45,6 @@
 
     &_title {
       color: #000;
-      font-family: Roboto;
       font-size: 24px;
       font-style: normal;
       font-weight: 400;
@@ -54,7 +54,6 @@
     &_info {
       margin-left: 10px;
       color: #333;
-      font-family: Roboto;
       font-size: 18px;
       font-style: normal;
       line-height: normal;
