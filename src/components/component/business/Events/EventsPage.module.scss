@@ -15,21 +15,21 @@
       font-style: normal;
       font-weight: 400;
 
-      &:active {
-        border: none;
+      &:focus {
+        outline: none;
       }
+
     }
   }
 
   &__container {
-    margin-top: 70px;
+    margin-top: 40px;
   }
 
   &__content {
     display: flex;
     width: 90%;
-    margin: 0 20px 0 20px;
-    padding-bottom: 35px;
+    margin: 30px 20px;
 
     &_image {
       height: 120px;
@@ -45,7 +45,6 @@
 
     &_title {
       color: #000;
-      font-family: Roboto;
       font-size: 24px;
       font-style: normal;
       font-weight: 400;
@@ -55,7 +54,6 @@
     &_info {
       margin-left: 10px;
       color: #333;
-      font-family: Roboto;
       font-size: 18px;
       font-style: normal;
       line-height: normal;
