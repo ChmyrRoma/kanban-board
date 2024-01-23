@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { places } from '../../mockData';
 
-import { IPlaces } from '../../types/places';
+import { IEvents } from '../../types/places';
 
 interface IProps {
-  places: IPlaces[]
+  places: IEvents[]
   isLoading: boolean
 }
 
