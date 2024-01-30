@@ -1,5 +1,8 @@
-import React from 'react';
-import { Grid, Input } from '@mui/material';
+import React, { useState, useCallback } from 'react';
+import { Box } from '@mui/material';
+
+import CustomModal from '../CustomModal/CustomModal';
+import AddEvent from '../../component/business/AddEvent/AddEvent';
 
 import styles from './PageComponent.module.scss';
 
@@ -17,16 +20,27 @@ interface IContent {
 }
 
 const PageComponent: React.FC<IProps> = ({ title, action, children }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const handleChange = useCallback(() => {
+    setIsOpen(!isOpen)
+  }, [isOpen])
+
   return (
-    <Grid className={styles.page}>
-      <Grid className={styles.page__header}>
-        <Grid className={styles.page__header_title}>{title}</Grid>
-        {action &&  <Grid><button className={styles.page__header_button}>Add Event</button></Grid>}
-      </Grid>
-      <Grid>
+    <Box className={styles.page}>
+      <Box className={styles.page__header}>
+        <Box className={styles.page__header_title}>{title}</Box>
+        {action && (
+          <Box>
+            <button className={styles.page__header_button} onClick={handleChange}>Add Event</button>
+            {isOpen && <CustomModal handleChange={handleChange}><AddEvent /></CustomModal>}
+          </Box>
+        )}
+      </Box>
+      <Box>
         {children}
-      </Grid>
-    </Grid>
+      </Box>
+    </Box>
   )
 }
 

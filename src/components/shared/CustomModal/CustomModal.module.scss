@@ -1,0 +1,62 @@
+.customModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: scroll;
+
+  &_container {
+    position: relative;
+    background: #f5f0f0;
+    padding: 20px;
+    margin-left: auto;
+    box-shadow: -3px 0px 7px 1px silver;
+    height: 100%;
+    right: 0;
+
+    transform: translateX(150%);
+    animation: open 1s forwards;
+
+    @keyframes open {
+      0% {
+        width: 0;
+        transform: translateY(0);
+      }
+      100% {
+        width: 450px;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__header {
+    &_button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50px;
+      font-size: larger;
+      background-color: #e3e0e0;
+
+      svg {
+        opacity: 0.7;
+      }
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__content {
+    margin-top: 30px;
+    padding: 10px;
+    max-width: 450px;
+    height: 400px;
+  }
+}
