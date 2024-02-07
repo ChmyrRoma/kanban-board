@@ -9,7 +9,7 @@ import styles from './PageComponent.module.scss';
 interface IProps {
   title: string,
   action?: boolean
-  content: IContent
+  children: IContent
 }
 
 interface IContent {
